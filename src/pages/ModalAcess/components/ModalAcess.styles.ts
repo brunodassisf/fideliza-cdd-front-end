@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 import WaveBottom from '../../../assets/img/waveBottom.svg';
+import { colors } from '../../../theme/color';
 
 export const Container = styled.div`
-    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+`;
+
+export const Title = styled.h1`
+    font-size: 25px;
+    font-family: NunitoRegular;
+    font-weight: 700;
+    color: ${colors.DARK};
+    text-align: center;
+    margin: 20px 0px;
 `;
 
 export const Wave = styled.img.attrs({
@@ -23,7 +32,7 @@ export const BackBottom = styled.div`
     bottom: 0;
     height: 121px;
     width: 100%;
-    background-color: gold;
+    background-color: ${colors.MAIN};
     @media (min-width: 768px) {
         display: none;
     }
@@ -31,11 +40,15 @@ export const BackBottom = styled.div`
 
 export const Content = styled.div`
     background-color: #ffffff;
-    width: 300px;
-    height: 300px;
     border-radius: 10px;
     box-shadow: 1px 1px 9px 2px rgba(204, 204, 204, 0.75);
     -webkit-box-shadow: 1px 1px 9px 2px rgba(204, 204, 204, 0.75);
     -moz-box-shadow: 1px 1px 9px 2px rgba(204, 204, 204, 0.75);
     z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 600px;
+    position: absolute;
+    top: 20%;
 `;
