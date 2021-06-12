@@ -8,15 +8,6 @@ export const Container = styled.div`
     align-items: stretch;
 `;
 
-export const Title = styled.h1`
-    font-size: 25px;
-    font-family: NunitoRegular;
-    font-weight: 700;
-    color: ${colors.DARK};
-    text-align: center;
-    margin: 20px 0px;
-`;
-
 export const Wave = styled.img.attrs({
     src: WaveBottom,
 })`
@@ -41,14 +32,47 @@ export const BackBottom = styled.div`
 export const Content = styled.div`
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 1px 1px 9px 2px rgba(204, 204, 204, 0.75);
-    -webkit-box-shadow: 1px 1px 9px 2px rgba(204, 204, 204, 0.75);
-    -moz-box-shadow: 1px 1px 9px 2px rgba(204, 204, 204, 0.75);
     z-index: 1;
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-width: 600px;
     position: absolute;
-    top: 20%;
+    top: 25%;
+    border: 1px solid #eee;
+`;
+
+export const Divider = styled.div`
+    font-size: 18px;
+    color: ${colors.FONTS};
+    font-family: NunitoRegular;
+    font-weight: 600;
+    &:before {
+        content: '';
+        border-left: 1px solid ${colors.FONTS};
+        display: block;
+        height: 130px;
+        width: 1px;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    &:after {
+        content: '';
+        border-left: 1px solid ${colors.FONTS};
+        display: block;
+        height: 130px;
+        width: 1px;
+        margin: auto;
+        margin-top: 15px;
+    }
+`;
+
+export const Title = styled.h1`
+    color: ${colors.FONTS};
+    font-family: NunitoRegular;
+    font-weight: 700;
+    font-size: 40px;
+    position: absolute;
+    top: 12%;
 `;

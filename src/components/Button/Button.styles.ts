@@ -5,17 +5,17 @@ import { ButtonProps } from './Button.types';
 export const StyledButton = styled.button<ButtonProps>`
     position: relative;
     outline: none;
-    color: ${colors.DARK};
-    background-color: ${colors.MAIN};
+    color: ${colors.WHITE};
+    background-color: ${colors.BUTTON};
     padding: 10px 48px;
     margin-bottom: 24px;
     border: 0;
     border-radius: 35px;
-    font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
     cursor: pointer;
     font-family: NunitoRegular;
+    letter-spacing: 1px;
     &:hover {
         opacity: ${(props) => (props.disabled ? 1 : 0.85)};
     }

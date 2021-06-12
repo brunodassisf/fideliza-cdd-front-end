@@ -5,7 +5,7 @@ export const Title = styled.h1`
     font-size: 25px;
     font-family: NunitoRegular;
     font-weight: 700;
-    color: ${colors.DARK};
+    color: ${colors.FONTS};
     text-align: center;
     margin: 20px 0px;
 `;

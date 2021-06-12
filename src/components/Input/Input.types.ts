@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from 'react';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    error?: string | null;
+    error?: string;
     label: string;
 }

@@ -10,7 +10,7 @@ const Input = ({
 }: InputProps): JSX.Element => {
     return (
         <Container>
-            <InputStyle id={label} type={type} {...props} />
+            <InputStyle id={label} type={type} borderStyle={error} {...props} />
             {error && <Error>{error}</Error>}
         </Container>
     );

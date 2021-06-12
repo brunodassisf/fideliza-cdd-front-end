@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
 import NunitoRegular from '../assets/font/Nunito-Regular.ttf';
+import { colors } from './color';
 
 export const GlobalStyle = createGlobalStyle`
     ${reset};
@@ -10,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
         }
         *, *:before, *:after {
         box-sizing: inherit;
+        }
+
+        body {
+            background-color: ${colors.BACK_APP};
         }
 
     @font-face {
