@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-    BackBottom,
-    Container,
-    Content,
-    Divider,
-    Title,
-    Wave,
-} from './ModalAcess.styles';
+import { Container, Content, Divider, Title, Wave } from './ModalAcess.styles';
 import SignUp from '../../SignUp/components';
 import SignIn from '../../SignIn/components';
 
@@ -23,9 +16,7 @@ const ModalAcess = () => {
                     <SignUp />
                 </div>
             </Content>
-
             <Wave />
-            <BackBottom />
         </Container>
     );
 };

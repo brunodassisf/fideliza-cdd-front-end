@@ -1,13 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ErrorMessage } from '@hookform/error-message';
 import Button from '../../../components/Button';
 import Input from '../../../components/Input';
 import { Title } from './SignIn.styles';
 import { validations } from './SignIn.validations';
 
 const SignIn = () => {
+    const history = useHistory();
     const {
         register,
         handleSubmit,
@@ -15,7 +16,7 @@ const SignIn = () => {
     } = useForm({
         resolver: yupResolver(validations),
     });
-    const onSubmit = handleSubmit((data) => console.log(data));
+    const onSubmit = handleSubmit((data) => history.push('/home'));
 
     return (
         <>
@@ -35,11 +36,6 @@ const SignIn = () => {
                     error={errors.password?.message}
                 />
                 <Button type="submit">Entrar</Button>
-                <ErrorMessage
-                    errors={errors}
-                    name="email"
-                    render={({ message }) => <p>{message}</p>}
-                />
             </form>
         </>
     );
