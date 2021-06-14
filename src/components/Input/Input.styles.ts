@@ -12,30 +12,30 @@ const checkLengthString = (val?: string) => {
 };
 
 export const Container = styled.div`
-    height: 61px;
+    height: 48px;
 `;
 
 export const InputStyle = styled.input<IStyleInput>`
-    border: 2px solid
+    border: 1px solid
         ${(props) =>
             checkLengthString(props.borderStyle)
                 ? colors.ERROR
                 : colors.BORDER};
     color: ${colors.COLOR_INPUT};
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: 5px 15px;
     &:focus-visible {
         outline: none;
     }
     &::placeholder {
-        font-size: 14px;
+        font-size: 0.8em;
         font-family: NunitoRegular;
         color: ${colors.COLOR_INPUT};
     }
 `;
 
 export const Error = styled.p`
-    font-size: 14px;
+    font-size: 0.5em;
     color: ${colors.ERROR};
     margin-bottom: 0px;
     padding-top: 3px;

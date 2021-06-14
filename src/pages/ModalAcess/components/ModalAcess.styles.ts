@@ -29,13 +29,14 @@ export const Content = styled.div`
     align-items: center;
     min-width: 600px;
     position: absolute;
-    top: 25%;
+    top: 15%;
     border: 1px solid #ccc;
     z-index: 3;
+    padding: 20px 0px;
 `;
 
 export const Divider = styled.div`
-    font-size: 18px;
+    font-size: 0.6em;
     color: ${colors.FONTS};
     font-family: NunitoRegular;
     font-weight: 600;
@@ -43,7 +44,7 @@ export const Divider = styled.div`
         content: '';
         border-left: 1px solid ${colors.FONTS};
         display: block;
-        height: 130px;
+        height: 80px;
         width: 1px;
         margin: auto;
         margin-bottom: 15px;
@@ -53,7 +54,7 @@ export const Divider = styled.div`
         content: '';
         border-left: 1px solid ${colors.FONTS};
         display: block;
-        height: 130px;
+        height: 80px;
         width: 1px;
         margin: auto;
         margin-top: 15px;
@@ -64,7 +65,7 @@ export const Title = styled.h1`
     color: ${colors.FONTS};
     font-family: NunitoRegular;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 1.2em;
     position: absolute;
-    top: 12%;
+    top: 5%;
 `;
