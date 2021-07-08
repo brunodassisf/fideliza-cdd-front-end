@@ -1,56 +1,33 @@
-import styled from 'styled-components';
-import { colors } from '../../theme/color';
-import { ButtonProps } from './Button.types';
+import { makeStyles } from '@material-ui/core/styles';
+import { choiceWeight } from '../../theme/util';
 
-const backColor = (val: string | undefined) => {
-    switch (val) {
-        case 'primary': {
-            return colors.PRIMARY;
-        }
-        case 'secondary': {
-            return colors.SECONDARY;
-        }
-        default: {
-            return colors.PRIMARY;
-        }
-    }
-};
+interface IButton {
+    hasMarginTop: number | undefined;
+    hasMarginBottom: number | undefined;
+    weight?: string;
+    fontSize?: number;
+    height?: number;
+    isUpperCase?: boolean;
+}
 
-const fontColor = (val: string | undefined) => {
-    switch (val) {
-        case 'primary': {
-            return colors.WHITE;
-        }
-        case 'secondary': {
-            return colors.FONTS;
-        }
-        default: {
-            return colors.WHITE;
-        }
-    }
-};
-
-export const StyledButton = styled.button<ButtonProps>`
-    position: relative;
-    outline: none;
-    color: ${(props) => fontColor(props.color)};
-    background-color: ${(props) => backColor(props.color)};
-    padding: 5px 35px;
-    border: 0;
-    border-radius: 35px;
-    font-size: 0.5em;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-family: NunitoRegular;
-    letter-spacing: 1px;
-    &:hover {
-        opacity: ${(props) => (props.disabled ? 1 : 0.85)};
-    }
-    @media (max-width: 768px) {
-        width: 100%;
-    }
-`;
-
-export const Container = styled.div`
-    text-align: center;
-`;
+export const useStyles = makeStyles((theme) => ({
+    container: (props: IButton) => ({
+        marginTop: props.hasMarginTop
+            ? theme.spacing(props.hasMarginTop as number)
+            : theme.spacing(0),
+        marginBottom: props.hasMarginBottom
+            ? theme.spacing(props.hasMarginBottom as number)
+            : theme.spacing(0),
+        textAlign: 'center',
+        '& .MuiButton-root': {
+            height: `${props.height}px`,
+            padding: props.height ? '0px 16px' : '6px 16px',
+            fontSize: props.fontSize ? props.fontSize : 'medium',
+            textTransform: props.isUpperCase ? 'uppercase' : 'initial',
+            fontFamily: `${choiceWeight(props.weight)}`,
+        },
+    }),
+    button: {
+        borderRadius: '20px',
+    },
+}));

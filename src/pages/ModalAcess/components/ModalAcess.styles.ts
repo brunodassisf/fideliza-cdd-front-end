@@ -11,7 +11,7 @@ export const Wave = styled.div`
     display: block;
     position: absolute;
     height: 65vh;
-    bottom: 0px;
+    bottom: -1px;
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1360 230" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(244, 241, 222, 1)" d="M 0 0 C 148.8 0 223.2 146 372 146 L 372 146 L 372 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(244, 241, 222, 1)" d="M 371 146 C 583.4 146 689.6 64 902 64 L 902 64 L 902 0 L 371 0 Z" stroke-width="0"></path> <path fill="rgba(47, 73, 94, 1)" d="M 901 64 C 1084.6 64 1176.4 163 1360 163 L 1360 163 L 1360 0 L 901 0 Z" stroke-width="0"></path></svg>');
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@ export const Content = styled.div`
     align-items: center;
     min-width: 600px;
     position: absolute;
-    top: 15%;
+    top: 25%;
     border: 1px solid #ccc;
     z-index: 3;
     padding: 20px 0px;
@@ -67,5 +67,5 @@ export const Title = styled.h1`
     font-weight: 700;
     font-size: 1.2em;
     position: absolute;
-    top: 5%;
+    top: 16%;
 `;

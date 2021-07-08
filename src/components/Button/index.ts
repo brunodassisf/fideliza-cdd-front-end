@@ -1,3 +1,3 @@
-import Button from './Button';
+import { CoreButton as Button } from './Button';
 
 export default Button;

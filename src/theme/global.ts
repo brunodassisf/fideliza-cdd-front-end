@@ -1,25 +1,43 @@
-import { createGlobalStyle } from 'styled-components';
-import { reset } from 'styled-reset';
-import NunitoRegular from '../assets/font/Nunito-Regular.ttf';
-import { colors } from './color';
+import Box from '@material-ui/core/Box';
+import { createTheme, withStyles } from '@material-ui/core/styles';
+import { Nunito, Nunito600, Nunito700, Nunito800, Nunito900 } from './font';
 
-export const GlobalStyle = createGlobalStyle`
-    ${reset};
+const primaryMain = '#e07a5f';
+const primaryText = '#f4f1de';
 
-    html {
-        box-sizing: border-box;
-        }
-        *, *:before, *:after {
-        box-sizing: inherit;
-        }
+const secondaryMain = '#81b29a';
+const secondaryText = '#f2cc8f';
 
-        body {
-            font-size: 20px;
-            background-color: ${colors.BACK_APP};
-        }
+export const Root = withStyles({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+    },
+})(Box);
 
-    @font-face {
-        font-family: NunitoRegular;
-        src: url(${NunitoRegular});
-    }
-`;
+export default createTheme({
+    palette: {
+        primary: {
+            main: primaryMain,
+            contrastText: primaryText,
+        },
+        secondary: {
+            main: secondaryMain,
+            contrastText: secondaryText,
+        },
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@global': {
+                '@font-face': [
+                    Nunito,
+                    Nunito600,
+                    Nunito700,
+                    Nunito800,
+                    Nunito900,
+                ],
+            },
+        },
+    },
+});

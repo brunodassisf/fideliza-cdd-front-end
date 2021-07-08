@@ -1,27 +1,37 @@
 import React from 'react';
+import { Box, Button } from '@material-ui/core';
+import { IButton } from './Button.types';
 
-import { Container, StyledButton } from './Button.styles';
-import { ButtonProps } from './Button.types';
+import { useStyles } from './Button.styles';
 
-export default function Button({
-    bg,
-    block,
-    children,
-    color,
+export function CoreButton({
+    hasMarginTop,
+    hasMarginBottom,
+    weight,
+    fontSize,
+    height,
+    isUpperCase,
     ...props
-}: ButtonProps): JSX.Element {
-    const { type } = props;
+}: IButton): JSX.Element {
+    const { children, color, disabled } = props;
+
+    const classProps = {
+        hasMarginTop,
+        hasMarginBottom,
+        color,
+        weight,
+        fontSize,
+        isUpperCase,
+        height,
+    };
+
+    const classes = useStyles(classProps);
+
     return (
-        <Container>
-            <StyledButton
-                type={type || 'button'}
-                bg={bg}
-                block={block}
-                color={color}
-                {...props}
-            >
+        <Box className={classes.container}>
+            <Button className={classes.button} {...props}>
                 {children}
-            </StyledButton>
-        </Container>
+            </Button>
+        </Box>
     );
 }

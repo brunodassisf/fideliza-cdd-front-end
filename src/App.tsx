@@ -1,13 +1,18 @@
 import React from 'react';
+import { ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Routes from './routes/routes';
-import { GlobalStyle } from './theme/global';
+
+import theme, { Root } from './theme/global';
 
 function App() {
     return (
-        <>
-            <Routes />
-            <GlobalStyle />
-        </>
+        <ThemeProvider theme={theme}>
+            <Root>
+                <Routes />
+                <CssBaseline />
+            </Root>
+        </ThemeProvider>
     );
 }
 

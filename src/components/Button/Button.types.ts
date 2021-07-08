@@ -1,8 +1,10 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonProps } from '@material-ui/core/Button';
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    bg?: string;
-    block?: boolean;
-    children: string | React.ReactChild;
-    color?: string;
-}
+export type IButton = {
+    hasMarginTop?: number;
+    hasMarginBottom?: number;
+    weight?: string;
+    fontSize?: number;
+    isUpperCase?: boolean;
+    height?: number;
+} & ButtonProps;
