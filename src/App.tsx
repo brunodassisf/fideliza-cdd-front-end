@@ -6,14 +6,14 @@ import Routes from './routes/routes';
 import theme, { Root } from './theme/global';
 
 function App() {
-    return (
-        <ThemeProvider theme={theme}>
-            <Root>
-                <Routes />
-                <CssBaseline />
-            </Root>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Root>
+        <Routes />
+        <CssBaseline />
+      </Root>
+    </ThemeProvider>
+  );
 }
 
 export default App;
