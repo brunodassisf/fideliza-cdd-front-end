@@ -1,14 +1,11 @@
 import React from 'react';
-import { Container, Content, User } from './Menu.styles';
 
 const Menu = () => {
-    return (
-        <Container>
-            <Content>
-                <User>Fulano</User>
-            </Content>
-        </Container>
-    );
+  return (
+    <>
+      <div>menu</div>
+    </>
+  );
 };
 
 export default Menu;
