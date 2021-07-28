@@ -5,33 +5,18 @@ import { IButton } from './Button.types';
 import { useStyles } from './Button.styles';
 
 export function CoreButton({
-    hasMarginTop,
-    hasMarginBottom,
-    weight,
-    fontSize,
-    height,
-    isUpperCase,
-    ...props
+  children,
+  align,
+  ...props
 }: IButton): JSX.Element {
-    const { children, color, disabled } = props;
+  const classes = useStyles(props);
+  const { mt, mb } = props;
 
-    const classProps = {
-        hasMarginTop,
-        hasMarginBottom,
-        color,
-        weight,
-        fontSize,
-        isUpperCase,
-        height,
-    };
-
-    const classes = useStyles(classProps);
-
-    return (
-        <Box className={classes.container}>
-            <Button className={classes.button} {...props}>
-                {children}
-            </Button>
-        </Box>
-    );
+  return (
+    <Box textAlign={align} mt={mt} mb={mb}>
+      <Button className={classes.button} {...props}>
+        {children}
+      </Button>
+    </Box>
+  );
 }

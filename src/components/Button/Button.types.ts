@@ -1,10 +1,11 @@
 import { ButtonProps } from '@material-ui/core/Button';
 
 export type IButton = {
-    hasMarginTop?: number;
-    hasMarginBottom?: number;
-    weight?: string;
-    fontSize?: number;
-    isUpperCase?: boolean;
-    height?: number;
+  sizeText?: number;
+  isUpperCase?: boolean;
+  mt?: number;
+  mb?: number;
+  px?: number;
+  heigth?: number;
+  align?: string;
 } & ButtonProps;
