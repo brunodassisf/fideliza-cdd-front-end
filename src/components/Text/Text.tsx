@@ -4,33 +4,17 @@ import Box from '@material-ui/core/Box';
 import { useStyles } from './Text.style';
 import { IText } from './Text.types';
 
-const Text = ({
-    children,
-    hasMarginTop,
-    hasMarginBottom,
-    shouldLoadColor,
-    weight,
-    size,
-    isUpperCase,
-    ...props
-}: IText): JSX.Element => {
-    const classProps = {
-        shouldLoadColor,
-        hasMarginTop,
-        hasMarginBottom,
-        weight,
-        size,
-        isUpperCase,
-    };
-    const classes = useStyles(classProps);
+const Text: React.FC<IText> = ({ children, ...props }: IText): JSX.Element => {
+  const classes = useStyles(props);
+  const { mt, mb, pt, pb, pl, pr } = props;
 
-    return (
-        <Box className={classes.container}>
-            <Typography className={classes.title} {...props}>
-                {children}
-            </Typography>
-        </Box>
-    );
+  return (
+    <Box mt={mt} mb={mb} pt={pt} pb={pb} pl={pl} pr={pr}>
+      <Typography className={classes.title} {...props}>
+        {children}
+      </Typography>
+    </Box>
+  );
 };
 
 export default Text;
