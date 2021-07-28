@@ -1,6 +1,5 @@
-import { InputHTMLAttributes } from 'react';
+import { TextFieldProps } from '@material-ui/core/TextField';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    error?: string;
-    label: string;
-}
+export type IInput = {
+  changeFieldType?: boolean;
+} & TextFieldProps;

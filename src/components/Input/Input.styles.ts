@@ -1,44 +1,34 @@
-import { InputHTMLAttributes } from 'react';
-import styled from 'styled-components';
-import { colors } from '../../theme/color';
+import { makeStyles } from '@material-ui/core/styles';
 
-interface IStyleInput extends InputHTMLAttributes<HTMLInputElement> {
-    borderStyle?: string;
-}
-
-const checkLengthString = (val?: string) => {
-    if (val) return true;
-    return false;
-};
-
-export const Container = styled.div`
-    height: 48px;
-`;
-
-export const InputStyle = styled.input<IStyleInput>`
-    border: 1px solid
-        ${(props) =>
-            checkLengthString(props.borderStyle)
-                ? colors.ERROR
-                : colors.BORDER};
-    color: ${colors.COLOR_INPUT};
-    border-radius: 20px;
-    padding: 5px 15px;
-    &:focus-visible {
-        outline: none;
-    }
-    &::placeholder {
-        font-size: 0.8em;
-        font-family: NunitoRegular;
-        color: ${colors.COLOR_INPUT};
-    }
-`;
-
-export const Error = styled.p`
-    font-size: 0.5em;
-    color: ${colors.ERROR};
-    margin-bottom: 0px;
-    padding-top: 3px;
-    padding-left: 12px;
-    font-family: NunitoRegular;
-`;
+export const useStyles = makeStyles((theme) => ({
+  input: {
+    position: 'relative',
+    '& .MuiOutlinedInput-root': {
+      borderRadius: theme.spacing(2),
+    },
+    '& .MuiInputLabel-outlined': {
+      fontFamily: 'Nunito-700',
+    },
+    // '& .MuiFormLabel-root': {
+    //     color: theme.palette.primary.contrastText,
+    // },
+    // '& .MuiInputBase-root': {
+    //     color: theme.palette.primary.contrastText,
+    // },
+    // '& .MuiOutlinedInput-notchedOutline': {
+    //     borderColor: theme.palette.primary.contrastText,
+    // },
+    // '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
+    //     borderColor: theme.palette.primary.contrastText,
+    // },
+  },
+  magicEye: {
+    position: 'absolute',
+    cursor: 'pointer',
+    zIndex: 2,
+    color: theme.palette.primary.main,
+    top: '20px',
+    right: '24px',
+    fontSize: '16px',
+  },
+}));
